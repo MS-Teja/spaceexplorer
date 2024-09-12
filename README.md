@@ -1,7 +1,5 @@
 # Explore the Cosmos
 
-![Explore the Cosmos Banner](.images/banner.png)
-
 Explore the Cosmos is an immersive and educational web experience that takes visitors on a journey through our solar system. Dive into the wonders of space and learn about the planets, moons, and other celestial objects that make up our cosmic neighborhood.
 
 ## Table of Contents
