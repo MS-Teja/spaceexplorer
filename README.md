@@ -17,7 +17,7 @@ Explore the Cosmos is an immersive and educational web experience that takes vis
 
 ## Demo
 
-[Include a link to your live demo here]
+[[Explore The Cosmos](https://explorecosmos.web.app)]
 
 ## Features
 
