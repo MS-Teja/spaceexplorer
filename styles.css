@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: 'Space Grotesk', 'Space Mono', 'Montserrat', Arial, sans-serif;
+    color: #f5f5f5;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #000000;
+    background-image: url('./images/space-background.jpg');
+    animation: moveBackground 60s linear infinite;
+    overflow-x: hidden;
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 10% 0;
+    }
+}
+
+/* Header styles */
+.header {
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+}
+
+.header h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+
+}
+
+.header p {
+    font-size: 1.6rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Scroll down arrow */
+.scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: fadeInBounce 8s ease-in-out infinite;
+    opacity: 0;
+}
+
+.scroll-arrow::before {
+    content: "↓";
+    font-size: 3rem;
+    color: #f5f5f5;
+}
+
+@keyframes fadeInBounce {
+     0%, 20% {
+        opacity: 0;
+        transform: translateY(0) translateX(-50%);
+    }
+    25% {
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    50%, 80%, 100% {
+        opacity: 1;
+        transform: translateY(0) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+/* Solar system overview styles */
+.solar-system-overview {
+    width: 100%;
+    height: 100%;
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.solar-system-overview::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.solar-system-overview h2,
+.solar-system-overview p {
+    position: relative;
+    z-index: 1;
+    text-align: center; /* Center the text within each element */
+    max-width: 800px; /* Limit the width for better readability */
+    padding: 1rem;
+}
+
+.solar-system-overview h2 {
+    font-size: 2.4rem;
+    margin-bottom: 1rem;
+}
+
+.solar-system-overview p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Planets styles */
+.planets {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 4rem auto;
+}
+
+.planet {
+    background-color: #000000;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 15em 1fr;
+}
+
+.planet:hover {
+    transform: translateY(-10px);
+}
+
+.planet h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.planet p {
+    margin-bottom: 1rem;
+}
+
+.planet ul {
+    list-style-type: none;
+    font-size: 1rem;
+}
+
+/* Planet background colors */
+.mercury-background {
+    background-color: #010101;
+}
+
+.mars-background {
+    background-color: #010101;
+}
+
+.neptune-background {
+    background-color: #010101;
+}
+
+.earth-moon-background {
+    background-color: #000000;
+}
+
+.titan-background {
+    background-color: #000000;
+}
+
+.europa-background {
+    background-color: #000000;
+}
+
+/* Planet description styles */
+
+.planet-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.planet-definition {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    width: 80ch;
+    text-align: left;
+}
+
+.planet-list {
+    list-style-type: none;
+    font-size: 1rem;
+    margin-left: 5rem;
+    width: 80ch;
+    text-align: left;
+}
+
+/* Moons styles */
+.moons {
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 4rem auto;
+}
+
+.moon {
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.moon:hover {
+    transform: translateY(-10px);
+}
+
+.moon h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.moon p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 50ch;
+    text-align: center;
+}
+
+.moon-image {
+    max-width: 200px;
+    height: auto;
+}
+
+/* Other solar system objects styles */
+.solar-system-objects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 4rem auto;
+}
+
+.solar-system-objects article {
+    background-color: #000000;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.solar-system-objects article:hover {
+    transform: translateY(-10px);
+}
+
+.solar-system-objects h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.solar-system-objects p {
+    margin-bottom: 1rem;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #000000;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.planet-image img{
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 1453px) {
+    .planet {
+        transform: scale(0.8);
+    }
+    .planet:hover {
+        transform: scale(0.85);
+    }
+    .planet h3 {
+        font-size: 1.6rem;
+    }
+    .planet p {
+        font-size: 1rem;
+    }
+}
